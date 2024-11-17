@@ -20,8 +20,8 @@
     <swiper-container
         v-else
         :space-between="20"
-        :loop="true"
-        :loopAddBlankSlides="true"
+        :slides-per-view="4"
+        :slides-per-group="4"
         :navigation="{
           prevEl: '.previous',
           nextEl: '.next',
@@ -59,20 +59,22 @@ onMounted(async () => {
   });
 })
 
+
 const countActualCard = (store, swipe) => {
-  // if (swipe == 'active' && store.activeSlide !== 1) {
-  //   store.activePage--;
-  // } else if (store.activeSlide == 1 && swipe == 'active'){
-  //   console.log(store.viewedCards.length)
-  //   store.activeSlide = store.viewedCards.length - 4;
-  //   store.activePage = Math.ceil(store.viewedCards.length / 4)
-  // } else if (swipe == 'next' && store.activeSlide > store.viewedCards.length - 4){
-  //   store.activeSlide = 1;
-  //   store.activePage = 1;
-  // } else {
-  //   store.activeSlide += 4;
-  //   store.activePage++;
-  // }
+  if (swipe == 'active' && store.activeSlide !== 1) {
+    store.activeSlide -= 4;
+    store.activePage--;
+  } else if (store.activeSlide == 1 && swipe == 'active'){
+    console.log(store.viewedCards.length)
+    store.activeSlide = store.viewedCards.length - 4;
+    store.activePage = Math.ceil(store.viewedCards.length / 4)
+  } else if (swipe == 'next' && store.activeSlide > store.viewedCards.length - 4){
+    store.activeSlide = 1;
+    store.activePage = 1;
+  } else {
+    store.activeSlide += 4;
+    store.activePage++;
+  }
 }
 
 const countPages = (store, swipe) => {
@@ -89,6 +91,7 @@ const countPages = (store, swipe) => {
 </script>
 
 <style scoped lang="scss">
+
 .viewed{
   &__header{
     margin-bottom: 50px;
@@ -123,10 +126,9 @@ const countPages = (store, swipe) => {
     }
   }
   &__slider{
-    //display: flex;
-    //justify-content: space-between;
-    //align-items: stretch;
-    display: grid;
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
     min-height: 500px;
   }
 }

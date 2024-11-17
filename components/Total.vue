@@ -17,7 +17,7 @@
       <h2 class="amount__title">Стоимость товаров</h2>
       <div class="amount">{{store.total}} ₽</div>
     </div>
-    <button class="order" @click="total(store)">Оформить заказ</button>
+    <button class="order" @click="store.buy">Оформить заказ</button>
     <button class="buy">Купить в 1 клик</button>
   </section>
 </template>
@@ -27,9 +27,7 @@ import useStore from "../stores/main.js";
 
 const store = useStore()
 
-const total = (store) => {
 
-}
 </script>
 
 <style scoped lang="scss">
