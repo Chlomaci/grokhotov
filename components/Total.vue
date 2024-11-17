@@ -97,4 +97,10 @@ button {
   font-size: 18px;
 }
 
+@media (max-width: 768px){
+  .total {
+    width: 100%;
+  }
+}
+
 </style>

@@ -9,7 +9,7 @@
         <div class="card__description">{{ card.description }}</div>
         <div class="card__article">Артикул: {{ card.article }}</div>
       </div>
-      <div class="card__calculate" :style="{'justify-content': card.quantity <= 1 ? 'center' : 'flex-end'}">
+      <div class="card__calculate" :class="card.quantity <= 1 ? '' : 'moreThanOne'">
         <div class="card__quantity">
           <button class="product__minus" @click="decreaseQuantity(card, store)">-</button>
           <div class="product__quantity">{{card.quantity}}</div>
@@ -140,10 +140,10 @@ li {
     font-size: 14px;
   }
   &__calculate{
-    width: 12%;
+    min-width: 13%;
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
+    justify-content: center;
     align-items: center;
     .card__quantity{
       color: #1F2432;
@@ -188,5 +188,50 @@ li {
 .last{
   border-bottom: none;
 }
+.moreThanOne {
+  justify-content: flex-end;
+}
+
+@media (max-width: 1440px){
+  .card__calculate{
+    padding-bottom: 2%;
+  }
+  .card__total{
+    margin-top: 20%;
+  }
+}
+
+@media (max-width: 1024px){
+  .moreThanOne{
+    padding-bottom: 8%;
+  }
+  .card__total{
+    font-size: 1.25rem;
+    margin-top: 50%;
+  }
+}
+
+@media (max-width: 768px){
+  .card__total{
+    margin-top: 30%;
+  }
+}
+
+@media (max-width: 425px){
+  .card__quantity{
+    flex-direction: column;
+    height: 64%;
+  }
+  .card__total{
+    margin-top: 85%;
+  }
+  .card__end{
+    width: 28%;
+  }
+  .card__info{
+    width: 30%;
+  }
+}
+
 
 </style>

@@ -60,7 +60,7 @@ onMounted(async () => {
 })
 
 
-const countActualCard = (store, swipe) => {
+const countPages = (store, swipe) => {
   if (swipe == 'active' && store.activeSlide !== 1) {
     store.activeSlide -= 4;
     store.activePage--;
@@ -77,14 +77,6 @@ const countActualCard = (store, swipe) => {
   }
 }
 
-const countPages = (store, swipe) => {
-  countActualCard(store, swipe);
-  // const calculatePage = store.viewedCards.length / 4;
-  // console.log(store.viewedCards.length, store.activeSlide, calculatePage)
-  // if (calculatePage == store.activeSlide){
-  //   store.activePage = calculatePage;
-  // }
-}
 
 
 

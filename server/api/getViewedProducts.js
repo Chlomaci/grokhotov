@@ -92,5 +92,15 @@ export default defineEventHandler((event) => {
             priceMinEur: '77.60',
             priceMaxEur: '643.86',
         },
+        {
+            id: 10,
+            img: '/_nuxt/assets/product_big_4.png',
+            title: 'TDA',
+            description: 'Вытяжное устройство с датчиком присутствия',
+            priceMinRub: '6 848',
+            priceMaxRub: '56 584',
+            priceMinEur: '77.60',
+            priceMaxEur: '643.86',
+        },
     ]
 })

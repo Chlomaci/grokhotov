@@ -54,4 +54,16 @@ h1, h2, h3 {
 button:hover{
   cursor: pointer;
 }
+
+@media (max-width: 768px){
+  .main{
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 425px){
+  .app{
+    padding: 15px;
+  }
+}
 </style>

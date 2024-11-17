@@ -57,7 +57,7 @@ const clearBasket = (store) => {
   &__title{
     font-weight: bold;
     margin: 0;
-    font-size: 40px;
+    font-size: 2.5rem;
     color: #1F2432;
   }
   &__quantity, &__clear{
@@ -81,7 +81,6 @@ const clearBasket = (store) => {
   padding: 25px;
   display: flex;
   align-items: center;
-  width: 100%;
   input, img{
     margin-right: 20px;
   }
@@ -107,4 +106,36 @@ const clearBasket = (store) => {
   }
 }
 
+@media (max-width: 1870px){
+  .basket__header_main{
+    width: 36%;
+  }
+}
+@media (max-width: 1800px){
+  .basket__header_main{
+    min-width: 40%;
+  }
+}
+
+@media (max-width: 1024px){
+  .basket__header_main{
+    align-items: flex-end;
+  }
+  .basket__main{
+    padding: 0;
+  }
+}
+
+@media (max-width: 768px){
+  .basket {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 425px){
+  .basket__title{
+    font-size: 1.5rem;
+  }
+}
 </style>
