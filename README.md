@@ -1,6 +1,7 @@
 Страница  с корзиной товаров
 
 Инструменты: Vue 3, Nuxt 3, swiper js
+
 Деплой: https://grokhotov.vercel.app/
 
 Сделано:
