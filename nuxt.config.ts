@@ -4,7 +4,7 @@ export default ({
   devtools: { enabled: true },
   modules: ['@pinia/nuxt'],
   app: {
-    baseURL: "/yourrepositoryname/"
+    baseURL: "/grokhotov/"
   },
   target: 'static'
 })
