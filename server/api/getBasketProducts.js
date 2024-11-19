@@ -4,7 +4,7 @@ export default defineEventHandler((event) => {
     return [
         {
             id: 1,
-            img: '/images/product_small_1.png',
+            img: '../images/product_small_1.png',
             title: 'Вытяжное устройство G2H',
             description: '12-72/168 м3/ч / гидрорегулируемый расход / от датчика присутствия',
             article: 'G2H1065',
@@ -14,7 +14,7 @@ export default defineEventHandler((event) => {
         },
         {
             id: 2,
-            img: '/images/product_small_2.png',
+            img: '../images/product_small_2.png',
             title: 'Вытяжное устройство BXC',
             description: '12-72/168 м3/ч / гидрорегулируемый расход / от датчика присутствия',
             article: 'G2H1066',
@@ -24,7 +24,7 @@ export default defineEventHandler((event) => {
         },
         {
             id: 3,
-            img: '/images/product_small_3.png',
+            img: '../images/product_small_3.png',
             title: 'Вытяжное устройство GHN',
             description: '12-72/168 м3/ч / гидрорегулируемый расход / от датчика присутствия',
             article: 'G2H1067',
