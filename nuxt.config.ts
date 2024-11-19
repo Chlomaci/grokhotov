@@ -4,7 +4,15 @@ export default ({
   devtools: { enabled: true },
   modules: ['@pinia/nuxt'],
   app: {
-    baseURL: "/grokhotov/"
+    baseURL: "/grokhotov/",
+    head: {
+      charset: 'utf-8',
+      viewport: 'width=device-width, initial-scale=1',
+      title: 'Grokhotov test',
+      meta: [
+        { name: 'description', content: 'Test for Grokhotov studio' }
+      ],
+    }
   },
   router: {
     base: '/grokhotov/'
