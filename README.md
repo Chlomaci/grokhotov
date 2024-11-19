@@ -1,75 +1,13 @@
-# Nuxt Minimal Starter
+Страница  с корзиной товаров
 
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+Инструменты: Vue 3, Nuxt 3, swiper js
+Деплой: https://grokhotov.vercel.app/
 
-## Setup
-
-Make sure to install dependencies:
-
-```bash
-# npm
-npm install
-
-# pnpm
-pnpm install
-
-# yarn
-yarn install
-
-# bun
-bun install
-```
-
-## Development Server
-
-Start the development server on `http://localhost:3000`:
-
-```bash
-# npm
-npm run dev
-
-# pnpm
-pnpm dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
-```
-
-## Production
-
-Build the application for production:
-
-```bash
-# npm
-npm run build
-
-# pnpm
-pnpm build
-
-# yarn
-yarn build
-
-# bun
-bun run build
-```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+Сделано:
+- удаление товаров
+- очищение корзины
+- изменение количества товаров
+- динамический подсчет цены и суммы в зависимости от количества товаров
+- подтверждение заказа и выведение сообщения об успешном заказе, если корзина была не пуста (выполнено алертом, но можно и модальное окно сделать)
+- подгрузка данных с Nuxt 3 server api и загрузка туда же
+- верстка и адаптация под различные экраны
