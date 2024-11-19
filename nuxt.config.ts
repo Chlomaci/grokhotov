@@ -1,7 +1,7 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default ({
   compatibilityDate: '2024-04-03',
-  devtools: { enabled: true },
+  devtools: {enabled: true},
   modules: ['@pinia/nuxt'],
   app: {
     baseURL: "/grokhotov/",
@@ -10,12 +10,12 @@ export default ({
       viewport: 'width=device-width, initial-scale=1',
       title: 'Grokhotov test',
       meta: [
-        { name: 'description', content: 'Test for Grokhotov' }
+        { name: 'description', content: 'Test for Grokhotov Studio' }
       ],
-    }
-  },
-  router: {
-    base: '/grokhotov/'
-  },
-  target: 'static'
+    },
+    router: {
+      base: '/grokhotov/'
+    },
+    target: 'static',
+  }
 })
