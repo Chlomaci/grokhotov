@@ -4,7 +4,7 @@ export default defineEventHandler((event) => {
     return [
         {
             id: 1,
-            img: '../images/product_big_1.png',
+            img: '/img/product_big_1.png',
             title: 'BXC',
             description: 'Вытяжное устройство для механической системы вентиляции',
             priceMinRub: '6 848',
@@ -14,7 +14,7 @@ export default defineEventHandler((event) => {
         },
         {
             id: 2,
-            img: '../images/product_big_2.png',
+            img: '/img/product_big_2.png',
             title: 'G2H',
             description: 'Многофункциональное вытяжное устройство для естественной и гибридной вентиляции',
             priceMinRub: '6 848',
@@ -24,7 +24,7 @@ export default defineEventHandler((event) => {
         },
         {
             id: 3,
-            img: '../images/product_big_3.png',
+            img: '/img/product_big_3.png',
             title: 'GHN',
             description: 'Вытяжное устройство с датчиком присутствия',
             priceMinRub: '6 848',
@@ -34,7 +34,7 @@ export default defineEventHandler((event) => {
         },
         {
             id: 4,
-            img: '../images/product_big_4.png',
+            img: '/img/product_big_4.png',
             title: 'TDA',
             description: 'Вытяжное устройство с датчиком присутствия',
             priceMinRub: '6 848',
@@ -44,7 +44,7 @@ export default defineEventHandler((event) => {
         },
         {
             id: 5,
-            img: '../images/product_big_1.png',
+            img: '/img/product_big_1.png',
             title: 'BXC',
             description: 'Вытяжное устройство для механической системы вентиляции',
             priceMinRub: '6 848',
@@ -54,7 +54,7 @@ export default defineEventHandler((event) => {
         },
         {
             id: 6,
-            img: '../images/product_big_2.png',
+            img: '/img/product_big_2.png',
             title: 'G2H',
             description: 'Многофункциональное вытяжное устройство для естественной и гибридной вентиляции',
             priceMinRub: '6 848',
@@ -64,7 +64,7 @@ export default defineEventHandler((event) => {
         },
         {
             id: 7,
-            img: '../images/product_big_3.png',
+            img: '/img/product_big_3.png',
             title: 'GHN',
             description: 'Вытяжное устройство с датчиком присутствия',
             priceMinRub: '6 848',
@@ -74,7 +74,7 @@ export default defineEventHandler((event) => {
         },
         {
             id: 8,
-            img: '../images/product_big_4.png',
+            img: '/img/product_big_4.png',
             title: 'TDA',
             description: 'Вытяжное устройство с датчиком присутствия',
             priceMinRub: '6 848',
@@ -84,7 +84,7 @@ export default defineEventHandler((event) => {
         },
         {
             id: 9,
-            img: '../images/product_big_4.png',
+            img: '/img/product_big_4.png',
             title: 'TDA',
             description: 'Вытяжное устройство с датчиком присутствия',
             priceMinRub: '6 848',
@@ -94,7 +94,7 @@ export default defineEventHandler((event) => {
         },
         {
             id: 10,
-            img: '../images/product_big_4.png',
+            img: '/img/product_big_4.png',
             title: 'TDA',
             description: 'Вытяжное устройство с датчиком присутствия',
             priceMinRub: '6 848',
