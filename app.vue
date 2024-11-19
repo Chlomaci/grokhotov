@@ -39,6 +39,8 @@
 .app {
   padding: 80px;
   font-family: 'Lato', sans-serif;
+  box-sizing: border-box;
+  margin: 0;
 }
 
 h1, h2, h3 {
@@ -55,15 +57,27 @@ button:hover{
   cursor: pointer;
 }
 
+@media (max-width: 1100px){
+  .app{
+    padding: 40px;
+  }
+}
+
 @media (max-width: 768px){
   .main{
     flex-direction: column;
   }
 }
 
-@media (max-width: 425px){
+@media (max-width: 655px){
   .app{
     padding: 15px;
+  }
+}
+
+@media (max-width: 380px){
+  .app{
+    padding: 0;
   }
 }
 </style>

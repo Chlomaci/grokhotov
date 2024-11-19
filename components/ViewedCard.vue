@@ -1,17 +1,19 @@
 <template>
-  <swiper-slide class="viewed__card" >
-    <div class="card__img">
-      <img :src="card.img" alt="product">
+  <swiper-slide v-slot="{ isVisible }">
+    <div class="viewed__card">
+      <div class="card__img">
+        <img :src="card.img" alt="product">
+      </div>
+      <div class="card__main">
+        <h2 class="card__title">{{ card.title }}</h2>
+        <div class="card__description">{{ card.description }}</div>
+      </div>
+      <div class="card__prices">
+        <div class="roubles">{{ card.priceMinRub }} ₽ – {{ card.priceMaxRub }} ₽</div>
+        <div class="euros">{{ card.priceMinEur }} € – {{ card.priceMaxEur }} €</div>
+      </div>
+      <button class="more">Подробнее</button>
     </div>
-    <div class="card__main">
-      <h2 class="card__title">{{ card.title }}</h2>
-      <div class="card__description">{{ card.description }}</div>
-    </div>
-    <div class="card__prices">
-      <div class="roubles">{{ card.priceMinRub }} ₽ – {{ card.priceMaxRub }} ₽</div>
-      <div class="euros">{{ card.priceMinEur }} € – {{ card.priceMaxEur }} €</div>
-    </div>
-    <button class="more">Подробнее</button>
   </swiper-slide>
 </template>
 
@@ -34,7 +36,7 @@ li {
   flex-direction: column;
   height: 100%;
   color: #1F2432;
-  width: 21% !important;
+  width: 85%;
 }
 .card{
   &__main{
@@ -80,5 +82,10 @@ button {
   border-radius: 4px;
 }
 
+@media (max-width: 540px) {
+  .viewed__card{
+    width: 90%;
+  }
+}
 
 </style>

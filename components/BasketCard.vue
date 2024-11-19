@@ -201,6 +201,15 @@ li {
   }
 }
 
+@media (max-width: 1440px){
+  .card__calculate.moreThanOne{
+    padding-bottom: 5%;
+  }
+  .card__total{
+    margin-top: 20%;
+  }
+}
+
 @media (max-width: 1024px){
   .moreThanOne{
     padding-bottom: 8%;
@@ -211,16 +220,28 @@ li {
   }
 }
 
+@media (max-width: 862px){
+  .card__calculate.moreThanOne{
+    padding-bottom: 15%;
+  }
+}
+
 @media (max-width: 768px){
   .card__total{
     margin-top: 30%;
   }
+  .moreThanOne{
+    padding-bottom: 1%;
+  }
 }
 
-@media (max-width: 425px){
+@media (max-width: 466px){
   .card__quantity{
     flex-direction: column;
-    height: 64%;
+    height: 73%;
+  }
+  .moreThanOne {
+    padding-bottom: 5%;
   }
   .card__total{
     margin-top: 85%;
@@ -230,6 +251,27 @@ li {
   }
   .card__info{
     width: 30%;
+  }
+}
+
+@media (max-width: 444px) {
+  .card__total{
+    font-size: 1rem;
+  }
+  .card__info{
+    width: 40%;
+  }
+}
+
+@media (max-width: 320px){
+  .card__description{
+    font-size: 9px;
+  }
+  .card__title, .card__article{
+    font-size: 12px;
+  }
+  .card__onePrice{
+    text-align: center;
   }
 }
 

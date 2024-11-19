@@ -3,13 +3,13 @@
     <div class="viewed__header">
       <h2 class="viewed__title">Просмотренные товары</h2>
       <div class="viewed__navigation">
-        <button class="previous" @click="countPages(store, 'active')">
+        <button class="previous" @click="countPages(store, 'active', swiper)">
           <img src="assets/previous.svg" alt="previous" />
         </button>
         <div class="pagination">
-          <span class="active">{{store.activePage}}</span> / {{ Math.ceil(store.viewedCards.length / 4) }}
+          <span class="active">{{store.activePage}}</span> / <span class="total">{{ store.totalPages }}</span>
         </div>
-        <button class="next" @click="countPages(store, 'next')">
+        <button class="next" @click="countPages(store, 'next', swiper)">
           <img src="assets/next.svg" alt="next" />
         </button>
       </div>
@@ -19,17 +19,34 @@
     </div>
     <swiper-container
         v-else
+        :modules="modules"
         :space-between="20"
-        :slides-per-view="4"
-        :slides-per-group="4"
+        :slides-per-view="1"
+        :slides-per-group="1"
+
         :navigation="{
           prevEl: '.previous',
           nextEl: '.next',
         }"
         :pagination="{
           el: '.pagination',
-          type: 'custom',
-          bulletActiveClass: 'active'
+          type: 'fraction',
+          currentClass: 'active',
+          totalClass: 'total'
+        }"
+        :breakpoints="{
+          560: {
+            slidesPerView: 2,
+            slidesPerGroup: 2,
+          },
+          900: {
+            slidesPerView: 3,
+            slidesPerGroup: 3,
+          },
+          1200: {
+            slidesPerView: 4,
+            slidesPerGroup: 4,
+          },
         }"
         class="viewed__slider"
     >
@@ -50,40 +67,18 @@ import { register } from 'swiper/element/bundle';
 
 register();
 
-
 onMounted(async () => {
   await store.getViewedCards();
 
   const swiper = new Swiper('.swiper', {
     modules: [Navigation, Pagination, Grid],
   });
+
 })
-
-
-const countPages = (store, swipe) => {
-  if (swipe == 'active' && store.activeSlide !== 1) {
-    store.activeSlide -= 4;
-    store.activePage--;
-  } else if (store.activeSlide == 1 && swipe == 'active'){
-    console.log(store.viewedCards.length)
-    store.activeSlide = store.viewedCards.length - 4;
-    store.activePage = Math.ceil(store.viewedCards.length / 4)
-  } else if (swipe == 'next' && store.activeSlide > store.viewedCards.length - 4){
-    store.activeSlide = 1;
-    store.activePage = 1;
-  } else {
-    store.activeSlide += 4;
-    store.activePage++;
-  }
-}
-
-
-
 
 </script>
 
-<style scoped lang="scss">
-
+<style  lang="scss">
 .viewed{
   &__header{
     margin-bottom: 50px;
@@ -124,5 +119,64 @@ const countPages = (store, swipe) => {
     min-height: 500px;
   }
 }
+span.active {
 
+}
+@media(max-width: 1600px){
+  .viewed__navigation{
+    width: 15%;
+  }
+}
+
+@media(max-width: 1200px){
+  .viewed__navigation{
+    width: 20%;
+  }
+}
+@media(max-width: 900px){
+  .viewed__navigation{
+    width: 25%;
+  }
+}
+
+@media(max-width: 700px){
+  .viewed__navigation{
+    width: 30%;
+  }
+}
+
+@media(max-width: 700px){
+  .viewed__title{
+    font-size: 25px;
+  }
+  .viewed__navigation button {
+    width: 35px;
+    height: 35px;
+  }
+}
+
+@media (max-width: 450px) {
+  .viewed__header{
+    align-items: center;
+  }
+  .viewed__navigation{
+    width: 40%;
+  }
+}
+
+@media (max-width: 395px) {
+  .viewed__navigation{
+    width: 50%;
+  }
+  .viewed__title{
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 325px) {
+  .viewed__navigation button {
+    width: 30px;
+    height: 30px;
+  }
+}
 </style>

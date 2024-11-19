@@ -97,9 +97,39 @@ button {
   font-size: 18px;
 }
 
+@media(max-width: 1050px){
+  .amount{
+    font-size: 20px;
+  }
+}
+
 @media (max-width: 768px){
   .total {
-    width: 100%;
+    width: 91%;
+  }
+}
+
+@media (max-width: 580px){
+  .total {
+    width: 88%;
+  }
+}
+
+@media (max-width: 400px){
+  .total {
+    max-width: 83%;
+  }
+}
+
+@media (max-width: 355px){
+  .total {
+    max-width: 80%;
+  }
+}
+
+@media(max-width: 340px){
+  .amount{
+    font-size: 20px;
   }
 }
 

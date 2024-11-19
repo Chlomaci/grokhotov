@@ -11,6 +11,8 @@ export const useStore = defineStore('websiteStore', {
         totalQuantity: 0,
         activeSlide: 1,
         activePage: 0,
+        totalPages: 0,
+        visibleSlides: 0,
     }),
     actions: {
         async getBasketCards() {

@@ -117,12 +117,64 @@ const clearBasket = (store) => {
   }
 }
 
+@media (max-width: 1650px){
+  .basket__header_main{
+    min-width: 45%;
+  }
+}
+
+@media (max-width: 1480px){
+  .basket__header_main{
+    min-width: 50%;
+  }
+}
+
+@media (max-width: 1360px){
+  .basket__header_main{
+    min-width: 55%;
+  }
+}
+
+@media (max-width: 1240px){
+  .basket__header_main{
+    min-width: 60%;
+  }
+}
+
+@media (max-width: 1160px){
+  .basket__header_main{
+    min-width: 63%;
+  }
+}
+
+@media (max-width: 1100px){
+  .basket__title{
+    font-size: 2rem;
+  }
+}
+
+
 @media (max-width: 1024px){
   .basket__header_main{
     align-items: flex-end;
   }
   .basket__main{
     padding: 0;
+  }
+}
+
+@media (max-width: 955px){
+  .basket__title{
+    font-size: 1.5rem;
+  }
+  .basket__header_main{
+    min-width: 58%;
+  }
+  .basket__clear{
+    max-width: 30%;
+  }
+  .basket__quantity{
+    font-size: 1rem;
   }
 }
 
