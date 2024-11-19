@@ -4,7 +4,7 @@ export default ({
   devtools: {enabled: true},
   modules: ['@pinia/nuxt'],
   app: {
-    baseURL: "/grokhotov/",
+    baseURL: "/",
     head: {
       charset: 'utf-8',
       viewport: 'width=device-width, initial-scale=1',
@@ -14,7 +14,7 @@ export default ({
       ],
     },
     router: {
-      base: '/grokhotov/'
+      base: '/'
     },
     target: 'static',
   }

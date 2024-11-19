@@ -23,6 +23,5 @@
   },
   "overrides": {
     "vue": "latest"
-  },
-  "homepage": "https://chlomaci.github.io/grokhotov"
+  }
 }
