@@ -7,14 +7,14 @@
           <img src="assets/previous.svg" alt="previous" />
         </button>
         <div class="pagination">
-          <span class="active">{{store.activePage}}</span> / <span class="total">{{ store.totalPages }}</span>
+          <span class="active">{{activePage}}</span> / <span class="total">{{ totalPages }}</span>
         </div>
         <button class="next" @click="countPages(store, 'next', swiper)">
           <img src="assets/next.svg" alt="next" />
         </button>
       </div>
     </div>
-    <div class="viewed__slider" v-if="store.isLoading">
+    <div class="viewed__slider" v-if="isLoading">
       Идет загрузка...
     </div>
     <swiper-container
@@ -50,7 +50,7 @@
         }"
         class="viewed__slider"
     >
-      <ViewedCard :card="card" v-for="card in store.viewedCards" :key="card.id" :id="card.id" />
+      <ViewedCard :card="card" v-for="card in viewedCards" :key="card.id" :id="card.id" />
     </swiper-container>
   </section>
 </template>
@@ -58,13 +58,14 @@
 <script setup>
 import {onMounted} from "vue";
 import useStore from "../stores/main.js";
-const store = useStore();
 import Swiper from 'swiper';
 import { Navigation, Pagination, Grid } from 'swiper/modules';
 import 'swiper/css';
 
 import { register } from 'swiper/element/bundle';
 
+const store = useStore();
+const {viewedCards, isLoading, activePage, totalPages} = storeToRefs(store)
 register();
 
 onMounted(async () => {

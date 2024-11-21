@@ -3,17 +3,17 @@
     <div class="basket__header">
       <div class="basket__header_main">
         <h1 class="basket__title">Ваша корзина</h1>
-        <div class="basket__quantity">{{store.basketCards.length}} товара</div>
+        <div class="basket__quantity">{{totalQuantity}} товар{{getEnd }}</div>
       </div>
       <button class="basket__clear" @click="clearBasket(store)">Очистить корзину</button>
     </div>
-    <div class="basket__main" v-show="store.isLoading">Идет загрузка...</div>
-    <div class="basket__main" v-show="store.basketCards.length == 0 && !store.isLoading">Корзина пуста</div>
-    <ul class="basket__main" v-show="!store.isLoading" >
-      <BasketCard v-for="card in store.basketCards" :card="card"/>
+    <div class="basket__main" v-show="isLoading">Идет загрузка...</div>
+    <div class="basket__main" v-show="basketCards.length == 0 && !isLoading">Корзина пуста</div>
+    <ul class="basket__main" v-show="!isLoading" >
+      <BasketCard v-for="card in basketCards" :card="card"/>
     </ul>
     <div class="basket__install">
-      <input type="checkbox" @change="() => {store.isInstallation = !store.isInstallation}">
+      <input type="checkbox" @change="() => {isInstallation = !isInstallation}">
       <img src="assets/install.svg" alt="install">
       <div class="install">
         <h2 class="install__title">Установка</h2>
@@ -28,15 +28,36 @@ import useStore from '/stores/main'
 import { onMounted } from 'vue'
 
 const store = useStore();
+const {basketCards, totalQuantity, isLoading, isInstallation} = storeToRefs(store)
 
 onMounted(async () => {
   await store.getBasketCards();
 })
 
+const getEnd = computed(() => {
+  switch (true){
+    case store.totalQuantity % 100 >= 11 && store.totalQuantity % 100 < 20:
+      return 'ов'
+    default:
+      break;
+  }
+
+  switch (store.totalQuantity % 10) {
+    case 1:
+      return
+    case 2:
+    case 3:
+    case 4:
+      return 'а'
+    default:
+      return 'ов'
+  }
+})
 
 const clearBasket = (store) => {
   store.basketCards = [];
-  store.total = 0
+  store.total = 0;
+  store.totalQuantity = 0;
 }
 </script>
 

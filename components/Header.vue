@@ -6,8 +6,8 @@
       </div>
       <div class="header__basket_info">
         <h3 class="header__title">Ваша корзина</h3>
-        <div class="header__quantity">{{ store.basketCards.length }} товара</div>
-        <div class="header__total">{{ store.total }} ₽</div>
+        <div class="header__quantity">{{ totalQuantity }} товар{{getEnd}}</div>
+        <div class="header__total">{{ total }} ₽</div>
       </div>
     </div>
   </header>
@@ -17,6 +17,27 @@
 import useStore from "../stores/main.js";
 
 const store = useStore()
+const {totalQuantity, total} = storeToRefs(store);
+
+const getEnd = computed(() => {
+  switch (true){
+    case store.totalQuantity % 100 >= 11 && store.totalQuantity % 100 < 20:
+      return 'ов'
+    default:
+      break;
+  }
+
+  switch (store.totalQuantity % 10) {
+    case 1:
+      return
+    case 2:
+    case 3:
+    case 4:
+      return 'а'
+    default:
+      return 'ов'
+  }
+})
 </script>
 
 <style lang="scss">

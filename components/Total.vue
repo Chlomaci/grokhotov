@@ -3,19 +3,19 @@
     <h1 class="total__title">Итого</h1>
     <div class="total__position" style="margin-bottom: 17px">
       <div class="subtitle">Сумма заказа</div>
-      <div class="value">{{store.total}} ₽</div>
+      <div class="value">{{total}} ₽</div>
     </div>
     <div class="total__position" style="margin-bottom: 17px">
       <div class="subtitle">Количество</div>
-      <div class="value">{{store.totalQuantity}} шт</div>
+      <div class="value">{{totalQuantity}} шт</div>
     </div>
     <div class="total__position">
       <div class="subtitle">Установка</div>
-      <div class="value">{{ store.isInstallation ? 'Да' : 'Нет' }}</div>
+      <div class="value">{{ isInstallation ? 'Да' : 'Нет' }}</div>
     </div>
     <div class="total__amount">
       <h2 class="amount__title">Стоимость товаров</h2>
-      <div class="amount">{{store.total}} ₽</div>
+      <div class="amount">{{total}} ₽</div>
     </div>
     <button class="order" @click="store.buy">Оформить заказ</button>
     <button class="buy">Купить в 1 клик</button>
@@ -26,7 +26,7 @@
 import useStore from "../stores/main.js";
 
 const store = useStore()
-
+const {totalQuantity, total, isInstallation} = storeToRefs(store)
 
 </script>
 

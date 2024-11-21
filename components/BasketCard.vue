@@ -1,5 +1,5 @@
 <template>
-  <li class="card" :class="{'last': store.basketCards.indexOf(card) == store.basketCards.length - 1}">
+  <li class="card" :class="{'last': basketCards.indexOf(card) == basketCards.length - 1}">
     <div class="card___img">
       <img :src="card.img" alt="product in basket">
     </div>
@@ -33,6 +33,7 @@ const props = defineProps({
   card: Object,
 })
 const store = useStore();
+const {basketCards} = storeToRefs(store)
 onMounted(() => {
   calculateSum(store);
 })
