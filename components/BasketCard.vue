@@ -63,9 +63,8 @@ const addQuantity = (card, store) => {
     parsedPrice = parseInt(selectedCard.priceForOne.replace(/\s+/g, ''));
   } else {
     selectedCard.quantity++
-    console.log(selectedCard.totalPrice)
     parsedPrice = parseInt(selectedCard.totalPrice.replace(/\s+/g, ''))
-    parsedPrice *= 2;
+    parsedPrice += parseInt(selectedCard.priceForOne.replace(/\s+/g, ''));
   }
   selectedCard.totalPrice = parsedPrice.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1 ')
   calculateSum(store);
@@ -79,7 +78,7 @@ const decreaseQuantity = (card, store) => {
       deleteProduct(card, store)
     } else {
       let parsedPrice = parseInt(selectedCard.totalPrice.replace(/\s+/g, ''));
-      parsedPrice /= 2;
+      parsedPrice -= parseInt(selectedCard.priceForOne.replace(/\s+/g, ''))
       selectedCard.totalPrice = parsedPrice.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1 ')
       calculateSum(store)
     }
